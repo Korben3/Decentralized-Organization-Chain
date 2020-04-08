@@ -36,6 +36,6 @@ pm2 start doc
 
 The tools directory contains example script to easily make a transaction.
 
-You can connect with the chain using Lisk hub by adding the node: http://167.179.98.242:4000
+You can connect with the chain using Lisk Desktop by adding the node: http://167.179.98.242:4000
 
-Use `wagon stock borrow episode laundry kitten salute link globe zero feed marble` to transfer 100 GDC tokens to your account in order to register as another operator.
+Use `wagon stock borrow episode laundry kitten salute link globe zero feed marble` to transfer DOC tokens to your account to make transactions.
