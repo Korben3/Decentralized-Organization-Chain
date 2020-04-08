@@ -13,6 +13,11 @@ const Menu = ({ loggedIn, login, logout, userInfo }) => {
     setUserPassphrase(data.target.value.trim());
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    login(userPassphrase);
+  };
+
   return (
     <Navbar bg="primary" variant="dark" className="mb-5" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -39,7 +44,7 @@ const Menu = ({ loggedIn, login, logout, userInfo }) => {
           )}
         </Nav>
         {!loggedIn ? (
-          <Form inline className="hidden-sx">
+          <Form inline className="hidden-sx" onSubmit={handleSubmit}>
             <Form.Control
               type="text"
               placeholder="DOC Passphrase"
