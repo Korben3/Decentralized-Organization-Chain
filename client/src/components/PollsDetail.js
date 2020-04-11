@@ -9,8 +9,8 @@ import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { useParams } from "react-router-dom";
 import { maxPollTime, nodes } from "../config/config.json";
+import { CastVoteTransaction } from "../transactions/cast-vote_transaction";
 
-const { CastVoteTransaction } = require("../transactions");
 const transactions = require("@liskhq/lisk-transactions");
 const { EPOCH_TIME } = require("@liskhq/lisk-constants");
 const { APIClient } = require("@liskhq/lisk-api-client");
@@ -36,7 +36,7 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
     console.log("voting");
     const userPassphrase = sessionStorage.getItem("secret");
 
-    if (pollAnswerSelected > 4) {
+    if (pollAnswerSelected > 5) {
       showMessage("Please select an answer.", "warning");
     } else {
       // setup connection, create and broadcast the tx
