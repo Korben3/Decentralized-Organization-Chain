@@ -1,10 +1,10 @@
-const {
+import {
   BaseTransaction,
   TransactionError,
   utils
-} = require("@liskhq/lisk-transactions");
+} from "@liskhq/lisk-transactions";
 
-class AddPollTransaction extends BaseTransaction {
+export class AddPollTransaction extends BaseTransaction {
   static get TYPE() {
     return 103;
   }
@@ -107,4 +107,3 @@ class AddPollTransaction extends BaseTransaction {
     return errors;
   }
 }
-module.exports = AddPollTransaction;
