@@ -7,7 +7,7 @@
 ### Installation
 
 ```
-git clone https://github.com/Korben3/Global-Data-Chain
+git clone https://github.com/Korben3/Decentralized-Organization-Chain
 cd client
 npm install
 ```
