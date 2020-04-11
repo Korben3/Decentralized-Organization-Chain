@@ -1,11 +1,11 @@
-const {
+import {
   BaseTransaction,
   TransactionError,
   utils
-} = require("@liskhq/lisk-transactions");
+} from "@liskhq/lisk-transactions";
 const { EPOCH_TIME } = require("@liskhq/lisk-constants");
 
-class CastVoteTransaction extends BaseTransaction {
+export class CastVoteTransaction extends BaseTransaction {
   static get TYPE() {
     return 104;
   }
@@ -132,4 +132,3 @@ class CastVoteTransaction extends BaseTransaction {
     return errors;
   }
 }
-module.exports = CastVoteTransaction;
