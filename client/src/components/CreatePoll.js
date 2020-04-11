@@ -6,8 +6,8 @@ import Button from "react-bootstrap/Button";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import { nodes } from "../config/config.json";
+import { AddPollTransaction } from "../transactions/add-poll_transaction";
 
-const { AddPollTransaction } = require("../transactions");
 const transactions = require("@liskhq/lisk-transactions");
 const { EPOCH_TIME } = require("@liskhq/lisk-constants");
 const { APIClient } = require("@liskhq/lisk-api-client");
