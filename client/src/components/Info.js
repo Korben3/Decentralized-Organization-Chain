@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Info.css";
 import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
@@ -12,6 +12,11 @@ import pollDetail from "../assets/pollDetail.png";
 import newPoll from "../assets/newPoll.png";
 
 const Info = () => {
+  
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+  
   return (
     <div className="info">
       <h2>Decentralized Organization Chain</h2>
