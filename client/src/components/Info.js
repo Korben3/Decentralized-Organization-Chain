@@ -178,7 +178,7 @@ const Info = () => {
         </tbody>
       </Table>
       <p>
-        You can find the source code can be found on github:{" "}
+        You can find the source code on github:{" "}
         <a href="https://github.com/Korben3/Decentralized-Organization-Chain">
           Github - korben3 - Decentralized Organization Chain
         </a>
