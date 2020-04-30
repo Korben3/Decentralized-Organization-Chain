@@ -70,8 +70,9 @@ class CastVoteTransaction extends BaseTransaction {
         let pollTimestamp = recipient.asset.timestamp;
         const maxPollTime = 604800; // seconds, default = 604800, 7 days
 
-        console.log(`current time: ${currentTimestamp}`);
+        console.log(`current time: ${currentTimestamp}`); // console messages are helpful for debugging
         console.log(`poll time: ${pollTimestamp}`);
+        
         if (currentTimestamp - pollTimestamp < maxPollTime) {
           // check if vote <=answers
           let answersLength = Object.keys(recipient.asset.poll.answers).length;
