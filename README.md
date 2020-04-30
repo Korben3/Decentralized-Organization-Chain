@@ -9,9 +9,8 @@ For the public API: http://167.179.98.242:4000
 
 Example calls:
 
-- [Retrieve balance of an account](http://167.179.98.242:4000/api/accounts?address=10572594784286738319L)
+- [View account info](http://167.179.98.242:4000/api/accounts?address=10572594784286738319L)
 - [See the status of the node](http://167.179.98.242:4000/api/node/status)
-- [Account info](http://167.179.98.242:4000/api/accounts?address=10572594784286738319L)
 
 For client documentation: [Client - Readme](https://github.com/Korben3/Decentralized-Organization-Chain/tree/master/client)
 
