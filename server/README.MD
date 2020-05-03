@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-First install the dependencies as detailed in the [Lisk SDK documentation](https://lisk.io/documentation/lisk-sdk/setup).
+First install the dependencies as detailed in the [Lisk SDK documentation](https://lisk.io/documentation/lisk-sdk/setup.html).
 
 - Node.js
 - PostgreSQL
