@@ -31,7 +31,6 @@ const PollsOverview = () => {
     })
       .then(res => {
         console.log("Poll accounts:");
-        console.log(res.data);
 
         let polls = res.data.filter(item => item.asset.poll); // filter, only accounts with poll asset
         console.log(polls);
