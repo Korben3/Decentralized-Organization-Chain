@@ -117,7 +117,7 @@ const CreatePoll = ({ loggedIn, showMessage, userInfo }) => {
 
   useEffect(() => {
     if (loggedIn) {
-      if (userInfo.asset.user.type === "board") {
+      if (userInfo?.asset?.user?.type === "board") {
         setEnableVoteButton(true);
       } else {
         setVoteMessage("Only board members are allowed to create a poll.");
@@ -130,8 +130,8 @@ const CreatePoll = ({ loggedIn, showMessage, userInfo }) => {
     <div>
       <Card
         border="primary"
-        className="Card mx-auto"
-        style={{ width: "36rem" }}
+        className="Card mx-auto mb-4"
+        style={{ width: "55vmax" }}
       >
         <Card.Header>Create a new poll</Card.Header>
         <Card.Body>
