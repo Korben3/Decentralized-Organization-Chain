@@ -20,6 +20,7 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
   const [pollQuestion, setPollQuestion] = useState();
   const [pollAnswers, setPollAnswers] = useState();
   const [pollTimestamp, setPollTimestamp] = useState();
+  const [timeLeft, setTimeLeft] = useState();
   const [pollAnswerSelected, setPollAnswerSelected] = useState(99);
   const [voteMessage, setVoteMessage] = useState("Please login to vote.");
   const [enableVoteButton, setEnableVoteButton] = useState(false);
@@ -86,7 +87,8 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
         let { poll } = res.data[0].asset;
         console.log(poll);
         setPollQuestion(poll.question);
-        setPollTimestamp(res.data[0].asset.timestamp);
+        let pollTimestamp = res.data[0].asset.timestamp;
+        setPollTimestamp(pollTimestamp);
 
         // calculate number of votes
         console.log(poll.votes);
@@ -103,9 +105,10 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
                 name="answer"
                 size="sm"
                 onChange={() => handleChange(index + 1)}
-              />
-              &nbsp;{index + 1}: {data}
+              />{" "}
+              <span className="text-muted">&nbsp; Answer {index + 1}</span>
             </InputGroup.Prepend>
+            {data}
             <ProgressBar
               now={(poll.votes[index + 1] / totalVotes) * 100}
               label={
@@ -118,6 +121,21 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
           </ListGroup.Item>
         ));
         setPollAnswers(answers);
+
+        // calculate time left or show poll closed showMessage
+        let currentTimestamp = getTimestamp();
+        console.log(`current timestamp: ${currentTimestamp}`);
+        if (currentTimestamp - pollTimestamp > maxPollTime) {
+          setTimeLeft("Poll closed");
+        } else {
+          let secondsLeft = maxPollTime - (currentTimestamp - pollTimestamp);
+          let days = Math.floor(secondsLeft / 3600 / 24);
+          let hours = Math.floor((secondsLeft / 3600) % 24);
+          let minutes = Math.floor((secondsLeft % 3600) / 60);
+          setTimeLeft(
+            `${days} day(s), ${hours} hour(s) and ${minutes} minutes left.`
+          );
+        }
       })
       .catch(err => {
         console.log(err);
@@ -142,11 +160,15 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
     <div>
       <Card
         border="primary"
-        className="Card mx-auto"
-        style={{ width: "36rem" }}
+        className="Card mx-auto mb-4"
+        style={{ width: "55vmax" }}
         key={address}
       >
-        <Card.Header>Poll: {address}</Card.Header>
+        <Card.Header>
+          Poll: {address}
+          <br />
+          <small className="text-muted">{timeLeft}</small>
+        </Card.Header>
         <Card.Body>
           <Card.Title>Question:</Card.Title>
           <Card.Text>{pollQuestion}</Card.Text>
@@ -173,7 +195,7 @@ const PollsDetail = ({ loggedIn, showMessage }) => {
               </span>
             </OverlayTrigger>
           )}
-          <Card.Text className="tm-4 text-right">
+          <Card.Text className="mt-3 text-right">
             <small className="text-muted">Vote fee: 100 DOC</small>
           </Card.Text>
         </Card.Body>
