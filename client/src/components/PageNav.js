@@ -23,7 +23,7 @@ const PageNav = ({ pollsPerPage, totalPolls, currentPage, gotoPage }) => {
   return (
     <div>
       <br />
-      <Pagination>{items}</Pagination>
+      <Pagination className="ml-4">{items}</Pagination>
     </div>
   );
 };
