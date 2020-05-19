@@ -32,12 +32,18 @@ const Menu = ({ loggedIn, login, logout, userInfo }) => {
           <NavLink to="/info" className="nav-link text-light">
             Information
           </NavLink>
+          <Nav.Link
+            href="https://github.com/Korben3/Decentralized-Organization-Chain"
+            className="nav-link text-light"
+          >
+            Source Code
+          </Nav.Link>
           {loggedIn ? (
             <NavLink
               to={"/account/" + userInfo.address}
               className="nav-link text-light"
             >
-              Account info
+              Account Info
             </NavLink>
           ) : (
             ""
