@@ -9,6 +9,7 @@ import { credit } from "./config/config.json";
 import Info from "./components/Info";
 import CreatePoll from "./components/CreatePoll";
 import PollsOverview from "./components/PollsOverview";
+import RegisterAccount from "./components/RegisterAccount";
 import AccountInfo from "./components/AccountInfo";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as cryptography from "@liskhq/lisk-cryptography";
@@ -120,7 +121,27 @@ const App = () => {
               />
             )}
           />
-          <Route path="/account/:address" component={AccountInfo} />
+          <Route
+            path="/account/:address"
+            render={props => (
+              <AccountInfo
+                {...props}
+                loggedIn={loggedIn}
+                showMessage={showMessage}
+              />
+            )}
+          />
+          <Route
+            path="/register"
+            render={props => (
+              <RegisterAccount
+                {...props}
+                loggedIn={loggedIn}
+                showMessage={showMessage}
+                userInfo={userInfo}
+              />
+            )}
+          />
           <Route path="/" component={PollsOverview} />
         </Switch>
       </Router>
