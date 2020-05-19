@@ -4,19 +4,19 @@ import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Prism from "prismjs";
 import "prismjs/themes/prism-okaidia.css";
-
 import viewPolls from "../assets/viewPolls.png";
 import login from "../assets/login.png";
 import accountInfo from "../assets/accountInfo.png";
 import pollDetail from "../assets/pollDetail.png";
 import newPoll from "../assets/newPoll.png";
+import register from "../assets/register.png";
+import registerPage from "../assets/registerPage.png";
 
 const Info = () => {
-  
   useEffect(() => {
     Prism.highlightAll();
   }, []);
-  
+
   return (
     <div className="info">
       <h2>Decentralized Organization Chain</h2>
@@ -58,16 +58,16 @@ const Info = () => {
       <p>The following rules are part of DOC:</p>
       <ul>
         <li>
-          Founders hold a significant amount of tokens, which can also partly be
-          used for future funding of the company.
+          Founders hold a significant amount of tokens, which can also be used
+          for future funding of the company.
         </li>
         <li>
           Initial Token Offering (ITO) allows interested parties to invest in
           the startup company and even take a board member position.
         </li>
         <li>
-          Quarterly profit is used to buy back and then burn Security tokens
-          from the exchanges, increasing the token price for investors and also
+          Quarterly profit is used to buy back and then burn tokens from the
+          exchanges, increasing the token price for investors and also
           decreasing the existing amount of tokens.
         </li>
         <li>
@@ -84,24 +84,25 @@ const Info = () => {
       <p>
         You can find all polls by clicking on Polls Overview in the menu on the
         top left of the page. From there look through the different pages or
-        filter to view All pols, the Open polls or Closed polls.
+        filter to view All polls, the Open polls or Closed polls.
       </p>
       <Image src={viewPolls} rounded />
       <p>
         To vote on a poll, goto Open polls and click on a poll question. This
         will take you to the Polls detail page. You can even share the link to
         the poll by copying the url, for example{" "}
-        <a href="http://localhost:3000/poll/2640854792302334037L">
-          doc.korben3.com/poll/2640854792302334037L
+        <a href="http://doc.korben3.com/poll/8097342680131618285L">
+          doc.korben3.com/poll/8097342680131618285L
         </a>
         .
       </p>
       <h5>Login</h5>
       <p>
         Before you can create a poll, you first have to login. Goto the top
-        right and enter a valid passphrase for the Decentralized Organization
-        Chain or use the already filled in passphrase. This one belongs to an
-        investor and allows you to vote. Then click the Login button.
+        right of the page and enter a valid passphrase for the Decentralized
+        Organization Chain. Or use the already filled in passphrase, this one
+        belongs to an investor account and allows you to vote. Then click the
+        Login button.
       </p>
       <Image src={login} rounded />
       <p>
@@ -111,24 +112,39 @@ const Info = () => {
         you can only vote or vote and create new polls.
       </p>
       <Image src={accountInfo} rounded />
+      <h5>Register Account</h5>
+      <p>
+        If you own enough DOC tokens you can register your account by first
+        logging in and then going to Account Info. There you can click on the
+        link called Register as an investor or board member. Or goto{" "}
+        <a href="http://doc.korben3.com/register">doc.korben3.com/register</a>
+      </p>
+      <Image src={register} rounded />
+      <p>
+        To register create a good username and choose a user type: investor or
+        board member. If the account has enough balance it will be registered
+        after clicking on the Register Account button.
+      </p>
+      <Image src={registerPage} rounded />
       <h5>Vote on a poll</h5>
       <p>
         To vote on a poll select one from the Open polls which you can find in
         the Polls Overview. Read the question and click on the circle option
         before the answer you would like to choose. Then click on the Vote
         button. Remember to vote you first must login, have enough balance and
-        are registered as an investor or board member.
+        are registered as an investor or board member. You can also see how many
+        time there's left before the poll closes.
       </p>
       <Image src={pollDetail} rounded />
       <h5>Create new poll</h5>
       <p>
         To create a new poll you first must be registered as a board member. If
-        you want to try it out just ask korben3 on Discord or Telegram for an
-        account. Goto Create Poll and fill in a good business related question
-        and at least 2 answers. Be sure to review the poll and then click on the
-        Submit Poll button. It will create the poll on an unique address. You
-        can find the created poll by going to Polls Overview and selecting Open
-        polls. Click on the poll and copy the url to share it with others.
+        you want to try it out just ask korben3 on Discord for an account. Goto
+        Create Poll and fill in a good business related question and at least 2
+        answers. Be sure to review the poll and then click on the Submit Poll
+        button. It will create the poll on an unique address. You can find the
+        created poll by going to Polls Overview and selecting Open polls. Click
+        on the poll and copy the url to share it with others.
       </p>
       <Image src={newPoll} rounded />
       <h4>Custom transactions</h4>
@@ -355,8 +371,12 @@ store.account.set(recipient.address, recipient);`}
         <i>
           Decentralized Organization Chain is a Proof of Concept created with
           the Lisk Framework by Lisk delegate korben3.
+          <br />
+          It received a fund from the{" "}
+          <a href="https://lisk.io/builders-program">Lisk Builders program</a>.
         </i>
       </p>
+      <p></p>
     </div>
   );
 };
