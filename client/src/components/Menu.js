@@ -29,9 +29,6 @@ const Menu = ({ loggedIn, login, logout, userInfo }) => {
           <NavLink to="/create" className="nav-link text-light">
             Create Poll
           </NavLink>
-          <NavLink to="/info" className="nav-link text-light">
-            Information
-          </NavLink>
           <Nav.Link
             href="https://github.com/Korben3/Decentralized-Organization-Chain"
             className="nav-link text-light"
