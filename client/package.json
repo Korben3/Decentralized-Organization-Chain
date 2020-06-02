@@ -4,7 +4,6 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "lisk-elements": "^2.4.2",
-    "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
