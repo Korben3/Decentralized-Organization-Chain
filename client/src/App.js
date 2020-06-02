@@ -6,7 +6,6 @@ import Menu from "./components/Menu";
 import PollsDetail from "./components/PollsDetail";
 import { getAccounts } from "./utils/tools";
 import { credit } from "./config/config.json";
-import Info from "./components/Info";
 import CreatePoll from "./components/CreatePoll";
 import PollsOverview from "./components/PollsOverview";
 import RegisterAccount from "./components/RegisterAccount";
@@ -110,7 +109,6 @@ const App = () => {
               />
             )}
           />
-          <Route path="/info" component={Info} />
           <Route
             path="/poll/:address"
             render={props => (
