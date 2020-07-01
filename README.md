@@ -1,5 +1,5 @@
 # Decentralized Organization Chain
-Decentralized blockchain application build with the [Lisk SDK](http://lisk.io) allowing startups to receive funding and investors to influence company decisions.
+Decentralized blockchain application built with the [Lisk SDK](http://lisk.io) allowing startups to receive funding and investors to influence company decisions.
 
 ### Docs and Demo
 
